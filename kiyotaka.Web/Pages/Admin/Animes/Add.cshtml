@@ -1,0 +1,44 @@
+﻿@page
+@model kiyotaka.Web.Pages.Admin.Animes.AddModel
+@{
+}
+
+
+<div>
+    <div class="container">
+        <form method="post">
+          <div class="mb-3">
+            <label for="heading">Heading</label>
+            <input type="text" class="form-control" id="heading" asp-for="AddAnimesRequest.Heading">
+          </div>
+          <div class="mb-3">
+            <label for="title">Page title</label>
+            <input type="text" class="form-control" id="title" asp-for="AddAnimesRequest.PageTitle">
+          </div>
+          
+          <div class="mb-3">
+            <label for="desc">Short Description</label>
+            <textarea class="form-control" id="desc" asp-for="AddAnimesRequest.ShortDescription" ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="imgurl">ImageUrl</label>
+            <input type="text" class="form-control" id="imgurl" asp-for="AddAnimesRequest.ImageUrl" >
+          </div>
+          <div class="mb-3">
+            <label for="urlhandle" class="form-label">Url Handler</label>
+            <input type="text" class="form-control" id="urlhandle" asp-for="AddAnimesRequest.UrlHandle">
+          </div>
+          <div class="mb-3">
+            <label for="releasedate">Released Date</label>
+            <input type="date" class="form-control" id="releasedate" asp-for="AddAnimesRequest.ReleaseDate">
+          </div>
+          <div class="mb-3">
+            <input class="form-check-input" type="checkbox"  id="isvisible" asp-for="AddAnimesRequest.Visible" >
+            <label class="form-check-label" for="visible">Is Visible</label>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </form>
+    </div>
+</div>
