@@ -1,9 +1,10 @@
 ﻿using kiyotaka.Web.Models.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace kiyotaka.Web.Data
 {
-    public class kiyotakaDbContext : DbContext
+    public class kiyotakaDbContext : IdentityDbContext
     {
         public kiyotakaDbContext(DbContextOptions options) : base(options)
         {

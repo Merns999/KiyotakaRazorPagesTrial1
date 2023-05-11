@@ -1,5 +1,6 @@
 using kiyotaka.Web.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<kiyotakaDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("KiyotakaDbConnectionString")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<kiyotakaDbContext>();
 
 var app = builder.Build();
 
