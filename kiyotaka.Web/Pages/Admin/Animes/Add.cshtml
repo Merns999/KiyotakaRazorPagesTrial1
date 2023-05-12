@@ -1,12 +1,21 @@
 ﻿@page
 @model kiyotaka.Web.Pages.Admin.Animes.AddModel
 @{
+    var message = ViewData["Message"]?.ToString();
 }
 
 
 <div>
     <div class="container">
         <form method="post">
+            <h2>Add new Anime</h2>
+
+            @if (!string.IsNullOrWhiteSpace(message))
+            {
+            <div class="alert alert-success" role="alert">
+                    @message
+            </div>
+            }
           <div class="mb-3">
             <label for="heading">Heading</label>
             <input type="text" class="form-control" id="heading" asp-for="AddAnimesRequest.Heading">

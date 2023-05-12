@@ -1,8 +1,6 @@
-﻿using kiyotaka.Web.Data;
-
-namespace kiyotaka.Web.Models.Domain
+﻿namespace kiyotaka.Web.Models.ViewModels
 {
-    public class AnimeHub
+    public class DeleteAnimeVM
     {
         public Guid Id { get; set; }
         public string Heading { get; set; }

@@ -1,0 +1,46 @@
+﻿@page 
+@model kiyotaka.Web.Pages.Admin.Animes.ListModel
+@{
+}
+<main class="flex-shrink-0">
+
+
+<!-- Page Content-->
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bolder"></h1>
+            <p class="lead fw-normal text-muted mb-0">Enjoy the sauce</p>
+        </div>
+        <div class="row gx-5">
+            <div class="col-lg-6 md-2">
+                    @if (Model.animes != null && Model.animes.Any())
+                        {
+                            @foreach (var anime in Model.animes)
+                            {
+                                <div class="col-md-4 mb-3">
+                                    <div class="d-flex flex-column align-items-start mb-2">
+                                        <div class="position-relative">
+                                            <img class="img-fluid rounded-3 mb-1" href="@anime.ImageUrl" alt="@anime.PageTitle" style="width: 100%; object-fit: cover; height: 200px;"/>
+                                            <div class="bottom-0 start-0 p-2 w-100" style="background-color: rgba(0,0,0,0.5);">
+                                                <a class="h3 fw-bolder text-decoration-none link-light stretched-link" href="#!" style="text-shadow: 1px 1px 1px #000;">@anime.Heading</a>
+                                            </div>
+                                        </div>
+                                        <a asp-page="/Admin/Animes/Edit" asp-route-id="@anime.Id">Edit</a> |
+                                        <a asp-page="/Admin/Animes/Delete" asp-route-id="@anime.Id">Delete</a>
+                                    </div>
+                                </div>
+                            }
+                        }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container px-5 my-5">
+        <h2 class="display-4 fw-bolder mb-4"> </h2>
+        <a class="btn btn-lg btn-primary" href="#!">Contact us</a>
+    </div>
+</section>
+</main>
