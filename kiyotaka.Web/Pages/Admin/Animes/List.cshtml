@@ -21,13 +21,20 @@
                                 <div class="col-md-4 mb-3">
                                     <div class="d-flex flex-column align-items-start mb-2">
                                         <div class="position-relative">
-                                            <img class="img-fluid rounded-3 mb-1" href="@anime.ImageUrl" alt="@anime.PageTitle" style="width: 100%; object-fit: cover; height: 200px;"/>
-                                            <div class="bottom-0 start-0 p-2 w-100" style="background-color: rgba(0,0,0,0.5);">
+                                            <img class="img-fluid rounded-3 mb-1" scr="@anime.ImageUrl" alt="@anime.PageTitle" style="width: 100%; object-fit: cover; height: 200px;"/>
+                                            <div class="bottom-0 start-0 p-2 w-100" style="background-color: rgba(146,146,146,0.5);">
                                                 <a class="h3 fw-bolder text-decoration-none link-light stretched-link" href="#!" style="text-shadow: 1px 1px 1px #000;">@anime.Heading</a>
                                             </div>
                                         </div>
-                                        <a asp-page="/Admin/Animes/Edit" asp-route-id="@anime.Id">Edit</a> |
-                                        <a asp-page="/Admin/Animes/Delete" asp-route-id="@anime.Id">Delete</a>
+                                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                                    {
+                                        <div class="d-inline-block">
+                                            <a asp-page="/Admin/Animes/Edit" asp-route-id="@anime.Id" class="btn btn-primary">Edit</a>
+                                        </div>
+                                        <div class="d-inline-block mb-2">
+                                            <a asp-page="/Admin/Animes/Delete" asp-route-id="@anime.Id" class="btn btn-danger">Delete</a>
+                                        </div>
+                                    }
                                     </div>
                                 </div>
                             }
