@@ -2,7 +2,7 @@
 
 namespace kiyotaka.Web.Models.Domain
 {
-    public class AnimeHub
+    public class AnimeHub : IEntity
     {
         public Guid Id { get; set; }
         public string Heading { get; set; }

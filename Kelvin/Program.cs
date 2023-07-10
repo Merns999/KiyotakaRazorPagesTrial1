@@ -1,21 +1,8 @@
-using kiyotaka.Web.Data;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using kiyotaka.Web.Models.Domain;
-using kiyotaka.Web.Data.EFCore;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
-builder.Services.AddDbContext<kiyotakaDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("KiyotakaDbConnectionString")));
-
-builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
-    .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<kiyotakaDbContext>();
-
-builder.Services.AddScoped<EfCoreAnimeRepository>();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -35,5 +22,6 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapControllers();
 
 app.Run();
