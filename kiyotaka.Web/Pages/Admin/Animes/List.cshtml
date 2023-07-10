@@ -1,0 +1,75 @@
+﻿@page 
+@{
+}
+<head>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/JQuery.js"></script>
+    <script src="~/js/Knockout.js"></script>
+</head>
+<main class="flex-shrink-0">
+
+
+<!-- Page Content-->
+@*<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bolder"></h1>
+            <p class="lead fw-normal text-muted mb-0">Enjoy the sauce</p>
+        </div>
+        <div class="row gx-5">
+            <div class="col-lg-6 md-2"> 
+                <div class="col-md-4 mb-3">
+                    <div class="d-flex flex-column align-items-start mb-2">
+                        <div class="position-relative">
+                            <img class="img-fluid rounded-3 mb-1"  style="width: 100%; object-fit: cover; height: 200px;"/>
+                            <div class="bottom-0 start-0 p-2 w-100" style="background-color: rgba(146,146,146,0.5);">
+                                <a class="h3 fw-bolder text-decoration-none link-light stretched-link" href="#!" style="text-shadow: 1px 1px 1px #000;">@anime.Heading</a>
+                            </div>
+                        </div>
+                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        <div class="d-inline-block">
+                            <a asp-page="/Admin/Animes/Edit" class="btn btn-primary">Edit</a>
+                        </div>
+                        <div class="d-inline-block mb-2">
+                            <a asp-page="/Admin/Animes/Delete" class="btn btn-danger">Delete</a>
+                        </div>
+                    }
+                    </div>
+                </div>
+
+                <a class="navbar-brand text-danger" asp-area="" asp-page="/Index">Return</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>*@
+
+@*<table id="animesTable" class="table">
+    <thead>
+        <tr>
+            @*<th>Id</th>*@
+            @*<th>Heading</th>
+            <th>PageTitle</th>
+            <th>ShortDescription</th>
+            <th>Image</th> 
+            <th>Release Date</th>
+            <th>Edit </th>
+            <th>Delete</th>
+
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>*@
+
+
+<section class="py-5 bg-light">
+    <div class="container px-5 my-5">
+        <h2 class="display-4 fw-bolder mb-4"> </h2>
+        <a class="btn btn-lg btn-primary" href="#!">Contact us</a>
+    </div>
+</section>
+</main>

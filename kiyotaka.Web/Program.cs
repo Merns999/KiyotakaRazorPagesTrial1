@@ -1,5 +1,8 @@
 using kiyotaka.Web.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using kiyotaka.Web.Models.Domain;
+using kiyotaka.Web.Data.EFCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +10,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<kiyotakaDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("KiyotakaDbConnectionString")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<kiyotakaDbContext>();
+
+builder.Services.AddScoped<EfCoreAnimeRepository>();
 
 var app = builder.Build();
 

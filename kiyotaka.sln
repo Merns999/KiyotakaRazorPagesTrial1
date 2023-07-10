@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kiyotaka.Web", "kiyotaka.Web\kiyotaka.Web.csproj", "{5AD3A286-EC83-405F-BE36-34B853ECA350}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kelvin", "Kelvin\Kelvin.csproj", "{4F249FBD-679C-4513-86A8-9ECBBC6D303D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5AD3A286-EC83-405F-BE36-34B853ECA350}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AD3A286-EC83-405F-BE36-34B853ECA350}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AD3A286-EC83-405F-BE36-34B853ECA350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F249FBD-679C-4513-86A8-9ECBBC6D303D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F249FBD-679C-4513-86A8-9ECBBC6D303D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F249FBD-679C-4513-86A8-9ECBBC6D303D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F249FBD-679C-4513-86A8-9ECBBC6D303D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
