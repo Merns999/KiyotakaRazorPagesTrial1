@@ -1,0 +1,41 @@
+﻿@page "{id:Guid}"
+@model kiyotaka.Web.Pages.Admin.Animes.DeleteModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+<h2>Delete an Anime</h2>
+
+<div>
+    <div class="container">
+        <form method="post">
+            <h2>Delete this Anime</h2>
+
+            @if (!string.IsNullOrWhiteSpace(message))
+            {
+                <div class="alert alert-success" role="alert">
+                    @message
+                </div>
+            }
+             <div class="col-md-6 mb-3">
+                <label for="id">Id</label>
+                <input type="text" class="form-control" id="id" asp-for="deleteAnimeVM.Id" value="deleteAnimeVM.Id" readonly>
+                <div class="invalid-feedback">
+                    Valid Id is required.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="heading">Heading</label>
+                <input type="text" class="form-control" id="heading" asp-for="deleteAnimeVM.Heading" value="deleteAnimeVM.Heading">
+            </div>
+
+          <div class="mb-3">
+            <button class="btn btn-danger" type="submit">Delete</button>
+          </div>
+          <a class="navbar-brand text-danger" asp-area="" asp-page="/Admin/Animes/List">Return</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </form>
+    </div>
+</div>

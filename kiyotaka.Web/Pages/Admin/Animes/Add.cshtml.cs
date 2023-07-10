@@ -1,12 +1,15 @@
 using kiyotaka.Web.Data;
 using kiyotaka.Web.Models.Domain;
 using kiyotaka.Web.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Identity.Client;
 
 namespace kiyotaka.Web.Pages.Admin.Animes
 {
+    
+    [Authorize]
     public class AddModel : PageModel
     {
         private readonly kiyotakaDbContext _kiyotakaDbContext;
@@ -35,6 +38,8 @@ namespace kiyotaka.Web.Pages.Admin.Animes
             };
             _kiyotakaDbContext.AnimeHubs.Add(animes);
             _kiyotakaDbContext.SaveChanges();
+
+            ViewData["Message"] = "Player Added Succefully";
         }
     }
 }
